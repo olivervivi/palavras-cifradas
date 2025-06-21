@@ -1,0 +1,20 @@
+{
+    "admin": {
+        "password": "c7fb53d1f89e173d4e778b6a8352af79::ltkEJST9yqCl08I-R9RFpL__1dDdW9qCL01f9VdwLHc=",
+        "role": "admin",
+        "tentativas": 0,
+        "ultimo_erro": null
+    },
+    "padrao": {
+        "password": "85eba162459af9ce4050f30bf0f273d7::6mPVuH4LcqlVIP_Ym6SraptwH9qrAYCaSDugxrO_2jE=",
+        "role": "premium",
+        "tentativas": 0,
+        "ultimo_erro": null
+    },
+    "premium": {
+        "password": "52ae300b02be5b63ca545488baa72c12::x2wrQucW6OqLEUudkKI-oGK5kvyfCPNmm_TpAul7tLM=",
+        "role": "premium",
+        "tentativas": 0,
+        "ultimo_erro": null
+    }
+}

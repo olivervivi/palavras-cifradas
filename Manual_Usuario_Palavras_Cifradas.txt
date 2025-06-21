@@ -1,0 +1,109 @@
+Manual do Usuário - Palavras Cifradas
+
+Este manual foi desenvolvido para guiar os usuários no uso correto e seguro da aplicação "Palavras Cifradas", uma plataforma web de criptografia e descriptografia de dados. O sistema funciona diretamente no navegador, sem necessidade de instalação.
+
+---
+
+1. Acesso e Autenticação
+
+- Página de Login: Informe seu nome de usuário e senha para acessar o sistema. As senhas são criptografadas e protegidas com alto padrão de segurança.
+- Cadastro: Caso ainda não tenha uma conta, vá para a opção “Cadastrar”, preencha os dados e crie sua senha.
+- Recursos por Perfil:
+    - Usuário padrão: pode usar a criptografia de texto.
+    - Usuário premium: acessa recursos de áudio, arquivos e exportações extras.
+    - Administrador: controla contas e simula outros perfis.
+
+---
+
+2. Criptografia de Texto
+
+- Vá até a página “Criptografia de Texto”.
+- Digite a mensagem a ser criptografada.
+- Informe a senha (se desejar, ela pode ser forte e longa).
+- Escolha o método: AES (criptografia forte com salt) ou XOR (simples, útil para aprendizado).
+- Clique em Criptografar.
+- O resultado pode ser copiado ou exportado como .txt, .pdf ou .docx.
+- Para descriptografar, cole o texto cifrado, insira a senha correta e clique em Descriptografar.
+
+---
+
+3. Criptografia de Áudio (MP3, WAV, OGG)
+
+Para que serve:
+A criptografia de áudio protege conteúdos sensíveis em formato sonoro, como gravações de voz, músicas, instruções ou documentos falados. Somente quem possuir a senha correta conseguirá ouvir o conteúdo original.
+
+Como usar:
+1. Acesse a página “Criptografia de Áudio”.
+2. Faça o upload de um áudio nos formatos suportados: .mp3, .wav, .ogg.
+    - Se o arquivo estiver em outro formato, converta para .mp3 com ferramentas como:
+    - Online Audio Converter (https://online-audio-converter.com/pt/)
+    - Aplicativos como VLC Media Player ou Audacity.
+3. Após o upload, insira uma senha de proteção.
+4. Clique em Criptografar.
+5. O áudio criptografado poderá ser baixado ou armazenado temporariamente para posterior uso.
+6. Para descriptografar, reenvie o arquivo criptografado e forneça a senha correta.
+7. O áudio descriptografado será reproduzido diretamente na interface.
+
+---
+
+4. Criptografia de Arquivos e Pastas
+
+Para que serve:
+Protege arquivos sensíveis (documentos, imagens, códigos) com senha. A descriptografia devolve exatamente o arquivo original, mantendo formato e conteúdo.
+
+Como criptografar uma pasta:
+1. Zipar a pasta antes do upload:
+    - Clique com o botão direito na pasta desejada → Enviar para → Pasta compactada (zipada).
+    - O sistema aceita arquivos com extensão .zip, .pdf, .docx, .txt, .png, entre outros.
+2. Acesse a página “Arquivos e Pastas”.
+3. Faça o upload do arquivo (inclusive .zip para pastas).
+4. Defina a senha de proteção.
+5. Clique em Criptografar.
+6. O arquivo criptografado será disponibilizado para download.
+
+Como descriptografar:
+1. Acesse novamente a página de arquivos.
+2. Faça o upload do arquivo criptografado.
+3. Digite a senha usada na criptografia.
+4. O sistema irá restaurar o arquivo original.
+
+---
+
+5. Histórico de Atividades
+
+- Cada operação registrada inclui:
+    - Tipo (Texto, Áudio, Arquivo)
+    - Método (AES ou XOR)
+    - Horário da operação
+- O histórico não é salvo permanentemente e é apagado ao sair da plataforma.
+- Pode ser exportado como .csv.
+
+---
+
+6. Plano Premium
+
+- Usuários padrão podem clicar em “Fazer Upgrade para Premium” para acessar mais recursos.
+- Este upgrade é simulado para fins de demonstração.
+
+---
+
+7. Segurança e Proteção
+
+- Todas as senhas são criptografadas com PBKDF2HMAC + SHA256.
+- O sistema não armazena dados dos arquivos nem senhas fornecidas.
+- O CSS oferece uma camada estética para ocultação de prints, mas não impede totalmente capturas de tela ou cópia de conteúdo.
+
+---
+
+Dicas Finais
+
+- Sempre guarde suas senhas com segurança.
+- Para maior proteção, use senhas diferentes por operação.
+- Prefira arquivos .zip ao enviar pastas.
+
+---
+
+Autora: Viviane de Oliveira
+Contato: vivi_oliver2015@yahoo.com.br
+Estudante de Segurança da Informação
+Instagram: @vivi_up2022

@@ -1,0 +1,46 @@
+1. Visão Geral do Projeto
+
+O aplicativo "Palavras Cifradas" é uma plataforma web desenvolvida em Python com Streamlit, voltada para a criptografia e descriptografia de mensagens, áudios e arquivos usando algoritmos como AES e XOR. Foi criado com foco na segurança, acessibilidade e experiência do usuário, oferecendo uma interface moderna e intuitiva acessível diretamente pelo navegador, sem necessidade de instalação.
+
+Trata-se de um sistema com autenticação por senha criptografada (PBKDF2HMAC), controle de perfis de usuário (administrador, padrão e premium), histórico temporário de operações, simulação de upgrades e exportação de resultados. O código é modular, seguro e continua em desenvolvimento para receber futuras melhorias. Desenvolvido por uma estudante de Segurança da Informação, o projeto prioriza a proteção dos dados e a organização funcional da criptografia.
+
+2. Tecnologias Utilizadas
+
+- Python 3.11 — Linguagem principal do projeto.
+- Streamlit — Framework para criação de interfaces web interativas de forma simples.
+- cryptography (Fernet + PBKDF2HMAC) — Criptografia de textos, áudios e arquivos.
+- FFmpeg + subprocess — Conversão e leitura de áudio.
+- ReportLab / python-docx — Exportação para PDF e DOCX.
+- pandas — Exibição e exportação de histórico em formato CSV.
+- qrcode — Geração de QR Codes.
+- CSS customizado — Estilização da interface.
+
+3. Estrutura do Projeto
+
+O projeto possui estrutura modular organizada em diretórios como `app/`, `core/`, `pages/`, `utils/`, entre outros. Essa separação favorece a legibilidade, manutenibilidade e futuras expansões. A seguir, as divisões principais do código:
+
+- Cabeçalho e Importações: Agrupa bibliotecas essenciais para criptografia, manipulação de arquivos, estilização e Streamlit.
+- Estilização (CSS): Blocos `st.markdown()` com `unsafe_allow_html=True` aplicam personalizações visuais. O CSS implementado atua como camada estética para ocultação visual de tentativas de impressão ou cópia de tela, mas não representa proteção real contra screenshots.
+- Autenticação e Segurança: Funções para criptografar senhas (PBKDF2HMAC + SHA256), verificar login e simular múltiplos perfis. Usuários são armazenados no `users.json`.
+- Criptografia:
+  - aes_encrypt_text, aes_decrypt_text — Criptografia/descriptografia de textos (AES + salt).
+  - aes_encrypt_bytes, aes_decrypt_bytes — Para arquivos e áudios.
+  - xor_encrypt, xor_decrypt — Método alternativo baseado em XOR com hash de verificação.
+- Conversão de Áudio: Usa FFmpeg via subprocess para converter formatos automaticamente, permitindo tocar diretamente no app.
+- Gestão de Sessão: Inicializa e gerencia `st.session_state` com histórico, contador de operações e estado do usuário logado.
+- Interface do Usuário: Dividida em páginas:
+  - Login e Cadastro
+  - Painel do Usuário
+  - Criptografia de Texto
+  - Criptografia de Áudio
+  - Criptografia de Arquivos/Pastas
+  - Plano Premium
+  - Painel de Atividades (temporário)
+  - Painel Administrativo (Apenas Admin)
+- Histórico de Operações: Armazenado na sessão (`st.session_state.historico`) com dados simples: tipo (texto, áudio ou arquivo), método (XOR ou AES) e horário da operação. O histórico não é persistido e é apagado ao sair da plataforma. Há opção de exportação para `.csv`.
+- Exportação: Resultados podem ser baixados como `.txt`, `.pdf` ou `.docx`, e o painel de atividades pode ser exportado em `.csv`.
+
+Autora: Viviane de Oliveira
+Contato: vivi_oliver2015@yahoo.com.br
+Estudante de Segurança da Informação
+Instagram: @vivi_up2022
