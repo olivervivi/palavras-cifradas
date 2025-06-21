@@ -1,0 +1,23 @@
+LICENÇA DE USO — PROIBIÇÃO TOTAL
+
+© 2025 Viviane de Oliveira. Todos os direitos reservados.
+
+Este projeto, incluindo seu código-fonte, estrutura, design, ideias, interfaces, textos e demais conteúdos, é propriedade intelectual exclusiva de Viviane de Oliveira.
+
+É terminantemente proibido:
+
+- Copiar, redistribuir ou disponibilizar este material por qualquer meio;
+- Modificar, adaptar, traduzir, transformar ou derivar qualquer parte deste projeto;
+- Utilizar este projeto ou qualquer parte dele para fins comerciais ou acadêmicos sem autorização expressa por escrito;
+- Publicar trechos ou partes do código em blogs, fóruns, redes sociais ou plataformas públicas;
+- Utilizar este projeto como base para criação de novos projetos, ferramentas ou aplicativos.
+
+**Este projeto não é de código aberto. Qualquer uso indevido constitui violação de direitos autorais, podendo gerar medidas legais.**
+
+Para solicitar permissão de uso, entre em contato com com a autora:
+📧 vivi_oliver2015@yahoo.com.br
+
+
+
+Registro realizado em: https://github.com/olivervivi/palavras-cifradas..
+
