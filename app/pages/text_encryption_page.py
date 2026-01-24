@@ -10,22 +10,24 @@ from core.auth.security import is_password_strong
 
 def text_encryption_page():
     st.title("✍️ Criptografia de Texto")
-    st.markdown("Ferramentas para encriptar e desencriptar mensagens de texto de forma segura.")
+    st.markdown("Ferramentas para criptografar e descriptografar mensagens de texto de forma segura.")
 
     xor_tab, aes_tab = st.tabs(["🛡️ Criptografia XOR (Básica)", "🌟 Criptografia AES (Premium)"])
 
     with xor_tab:
         st.info("XOR é uma cifra rápida e simples. Pressione Enter no campo da senha para processar.")
 
-        modo = st.radio("Selecione o Modo:", ["Cifrar", "Decifrar"], horizontal=True, key="modo_xor_form")
+        # CORREÇÃO AQUI: Mudado para Criptografar / Descriptografar
+        modo = st.radio("Selecione o Modo:", ["Criptografar", "Descriptografar"], horizontal=True, key="modo_xor_form")
 
         with st.form(key="xor_form"):
-            if modo == "Decifrar":
-                uploaded_file = st.file_uploader("📁 Envie o arquivo .enc OU cole o texto cifrado:", type=["enc"], key="xor_file_upload")
+            # LÓGICA AJUSTADA
+            if modo == "Descriptografar":
+                uploaded_file = st.file_uploader("📁 Envie o arquivo .enc OU cole o texto criptografado:", type=["enc"], key="xor_file_upload")
                 if uploaded_file:
                     texto_xor = uploaded_file.read().decode("utf-8")
                 else:
-                    texto_xor = st.text_area("📝 Cole o conteúdo cifrado:", key="texto_input_xor_form")
+                    texto_xor = st.text_area("📝 Cole o conteúdo criptografado:", key="texto_input_xor_form")
             else:
                 texto_xor = st.text_area("📝 Digite a mensagem aqui:", key="texto_input_xor_form")
 
@@ -37,14 +39,15 @@ def text_encryption_page():
                 st.warning("⚠️ Texto e senha são obrigatórios.")
             else:
                 with st.spinner("A processar..."):
-                    if modo == "Cifrar":
+                    # LÓGICA AJUSTADA
+                    if modo == "Criptografar":
                         resultado = xor_encrypt(texto_xor, senha_xor)
                     else:
                         resultado = xor_decrypt(texto_xor, senha_xor)
                     st.session_state.resultado_xor = resultado
 
                 if "Erro" not in resultado:
-                    st.toast(f"Texto '{modo}' com sucesso!", icon="✅")
+                    st.toast(f"Texto processado ({modo}) com sucesso!", icon="✅")
                     st.session_state.historico.append(("XOR", f"Texto {modo}", datetime.now().strftime("%H:%M:%S")))
                     st.session_state.contador_operacoes["XOR"] += 1
                 else:
@@ -67,15 +70,17 @@ def text_encryption_page():
         if get_active_role() in ["premium", "admin"]:
             st.info("AES é o padrão industrial. Recomendado para dados sensíveis.")
 
-            modo = st.radio("Selecione o Modo AES:", ["Cifrar", "Decifrar"], horizontal=True, key="modo_aes_form")
+            # CORREÇÃO AQUI TAMBÉM: Criptografar / Descriptografar
+            modo = st.radio("Selecione o Modo AES:", ["Criptografar", "Descriptografar"], horizontal=True, key="modo_aes_form")
 
             with st.form(key="aes_form"):
-                if modo == "Decifrar":
-                    uploaded_file = st.file_uploader("📁 Envie o arquivo .enc OU cole o texto cifrado:", type=["enc"], key="aes_file_upload")
+                # LÓGICA AJUSTADA
+                if modo == "Descriptografar":
+                    uploaded_file = st.file_uploader("📁 Envie o arquivo .enc OU cole o texto criptografado:", type=["enc"], key="aes_file_upload")
                     if uploaded_file:
                         texto_aes = uploaded_file.read().decode("utf-8")
                     else:
-                        texto_aes = st.text_area("📝 Cole o conteúdo cifrado:", key="texto_input_aes_form")
+                        texto_aes = st.text_area("📝 Cole o conteúdo criptografado:", key="texto_input_aes_form")
                 else:
                     texto_aes = st.text_area("📝 Digite a mensagem AES aqui:", key="texto_input_aes_form")
 
@@ -102,7 +107,8 @@ def text_encryption_page():
                         st.error(f"Senha fraca: {message}")
                     else:
                         with st.spinner("A processar..."):
-                            if modo == "Cifrar":
+                            # LÓGICA AJUSTADA
+                            if modo == "Criptografar":
                                 resultado = aes_encrypt_text(texto_aes, senha_aes)
                             else:
                                 if "::" in texto_aes:

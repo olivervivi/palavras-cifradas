@@ -36,23 +36,29 @@ def sidebar_navigation(pages_map: dict):
 
         st.caption(f"🔎 Papel ativo: **{active_role}**")
 
-        if st.button("🏠 Painel de Controlo", key="nav_home_btn"):
+        if st.button("🏠 Painel de Controle", key="nav_home_btn"):
             navigate_safe("home")
-        if st.button("✍️ Criptografia de Texto", key="nav_text_encryption_btn"):
+            
+        if st.button("✍️ Criptografar/Descriptografar Texto", key="nav_text_encryption_btn"):
             navigate_safe("text_encryption")
 
+        # Início do bloco de restrição Premium/Admin
         if active_role in ["premium", "admin"]:
             if st.button("📦 Arquivos e Pastas", key="nav_file_folder_encryption_btn"):
                 navigate_safe("file_folder_encryption")
             if st.button("🔒 Criptografar Áudio", key="nav_audio_encrypt_btn"):
                 navigate_safe("audio_encrypt")
+            
+            # AQUI ESTAVA O ERRO "DESCRITIVO", JÁ ARRUMEI:
             if st.button("🔓 Descriptografar Áudio", key="nav_audio_decrypt_btn"):
                 navigate_safe("audio_decrypt")
+                
             if st.button("📊 Minhas Atividades", key="nav_auditoria_usuario_btn"):
                 navigate_safe("auditoria_usuario")
             if st.button("🔗 Gerar Link Compartilhável", key="nav_link_generator_btn"):
                 navigate_safe("link_generator")
         else:
+            # Opção para usuários que não possuem acesso total
             if st.button("✨ Fazer Upgrade para Premium", key="nav_premium_plan_btn"):
                 navigate_safe("premium_plan")
 
