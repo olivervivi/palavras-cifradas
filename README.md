@@ -9,7 +9,8 @@
 ## 🌐 Acesse Agora
 
 Use a aplicação gratuitamente direto do navegador:  
-🔗 [https://palavras-cifradas.streamlit.app](#)
+ [🔗 Acesse a aplicação](https://palavras-cifradas.streamlit.app/)
+
 
 > **Não é necessário instalar nem baixar nada.**
 
